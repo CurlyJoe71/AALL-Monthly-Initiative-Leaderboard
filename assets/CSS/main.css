@@ -24,7 +24,7 @@ body {
     /* background: #43812b; */
     flex-wrap: wrap;
     height: 68vh;
-    background-image: url(http://curlyjoe71.github.io/AALL-Monthly-Initiative-Leaderboard/assets/images/Survivor_clipped_rev_1.png);
+    background-image: url("http://curlyjoe71.github.io/AALL-Monthly-Initiative-Leaderboard/assets/images/Survivor_clipped_rev_1.png");
     background-position: center;
     background-repeat: no-repeat;
 }
