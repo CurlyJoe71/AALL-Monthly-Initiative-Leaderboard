@@ -13,58 +13,81 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
-var csrNames = db.collection("CSR").doc("Names");
-// var namesArray = [];
-const namesArray = [
-    "Jaime Gonzalez",
-    "James Gonzo",
-    "Jamie WrongName",
-    "James Michael",
-    "Jimmy GG",
-    "Not As Good As Jimmy",
-    "Jim Mickey",
-    "Jim-Jim Jur-EE",
-    "Jaime Bo Baime",
-    "More Testing",
-    "Even More Names",
-    "Getting to the Bottom",
-    "Who are You?",
-    "I Have No Idea!",
-    "Where are we going?",
-    "Probably to the Moon and Back",
-    "Oh you're so sweet",
-    "I know, right?",
-    "Boom Chikaboom"
-]
+let csrNames = db.collection("Survivors");
+let mainObject = [];
+// const namesArray = [
+//     "Jaime Gonzalez",
+//     "James Gonzo",
+//     "Jamie WrongName",
+//     "James Michael",
+//     "Jimmy GG",
+//     "Not As Good As Jimmy",
+//     "Jim Mickey",
+//     "Jim-Jim Jur-EE",
+//     "Jaime Bo Baime",
+//     "More Testing",
+//     "Even More Names",
+//     "Getting to the Bottom",
+//     "Who are You?",
+//     "I Have No Idea!",
+//     "Where are we going?",
+//     "Probably to the Moon and Back",
+//     "Oh you're so sweet",
+//     "I know, right?",
+//     "Boom Chikaboom"
+// ]
+
+/* 
+mainObject should look like:
+{Name: "Jaime Gonzalez",
+Tribe: "CORP"},
+{Name: "Jimmy Gonzo",
+Tribe: "ACHG"}
+*/
 
 function getNames() {
-    csrNames.get().then((doc) => {
-        if (doc.exists) {
-            console.log(doc.data());
-            // namesArray = Object.values(doc.data());
-            console.log(namesArray); 
+    csrNames.get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            console.log(doc.data().CSR);
+            // piece together a new object with whatever details we'll need displayed.
+            // e.g. Name, Tribe, else?
+
+            // change line below to make the mainObject contain the newly constructed object.
+            // mainObject = Object.keys(doc.data());
+            let tempObject = new Object();
+            tempObject['Name'] = doc.data().Name;
+            tempObject['Tribe'] = doc.data().Tribe;
+            // console.log(tempObject);
+            mainObject.push(tempObject);
+            // console.log(mainObject);
+        })
+
             // addTopNames();
+
             addNames();
-            topNameAnimation();
-        }
+            // topNameAnimation();
+    })
+    .catch(err => {
+        console.log(`Error getting documents. ${err}`)
     })
 }
 
-
-function addTopNames() {
-    for (i=0; i<=2; i++) {
-        const newTopName = "<h2 class='topName'>" + (i+1) + ". " + namesArray[i] + "</h2>";
-        $('#nameField').append("<div class='row'></div>");
-        $('#nameField').append(newTopName);
-    }
-} 
+// function addTopNames() {
+//     for (i=0; i<=2; i++) {
+//         const newTopName = "<h2 class='topName'>" + namesArray[i] + "</h2>";
+//         $('#nameField').append("<div class='row'></div>");
+//         $('#nameField').append(newTopName);
+//     }
+// } 
 
 function addNames() {
-    for (i=0; i<namesArray.length; i++) {
-        const newLowName = "<h3 class='lowName'>" + namesArray[i] + "</h3>";
+    mainObject.forEach(doc => {
+        console.log(doc)
+        const newLowName = "<h3 class='lowName'>" + doc["Name"] + "</h3>";
         $('#lowNameField').append("<div class='row'></div>");
         $('#lowNameField').append(newLowName);
-    }
+    })
 }
 
 function topNameAnimation() {
