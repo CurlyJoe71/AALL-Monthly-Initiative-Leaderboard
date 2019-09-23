@@ -84,7 +84,7 @@ function getNames() {
 function addNames() {
     mainObject.forEach(doc => {
         console.log(doc)
-        const newLowName = "<h3 class='lowName'>" + doc["Name"] + "</h3>";
+        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " (" + doc["Tribe"] + ")" + "</h3>";
         $('#lowNameField').append("<div class='row'></div>");
         $('#lowNameField').append(newLowName);
     })
