@@ -92,7 +92,7 @@ body {
 }
 
 .lowName {
-    font-size: 25px;
+    font-size: 30px;
     color: white;
     font-family: 'Fredoka One', cursive;
     text-align: center;
@@ -184,19 +184,19 @@ body {
     }
     100% {
       text-shadow: 
-      1px 2px 13px rgb(65, 28, 4), 
+      0px 2px 13px rgb(65, 28, 4), 
       5px 5px 5px rgb(18, 211, 18);    
     }
   }
 
   /* @media screen and (min-width: 320px) {
     .lowName {
-      font-size: calc(25px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(20px + 10 * ((100vw - 320px) / 680));
     }
   }
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 100px) {
     .lowName {
-      font-size: 23px;
+      font-size: 30px;
     }
   } */
