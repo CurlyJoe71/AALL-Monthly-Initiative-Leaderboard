@@ -191,7 +191,7 @@ body {
 
   @media screen and (min-width) {
     .lowName {
-      font-size: calc(16px + 6 * ((100vw-320px) / 680));
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     }
   }
 
