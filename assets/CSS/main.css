@@ -98,8 +98,8 @@ body {
     text-align: center;
     /* -webkit-animation: text-blur-out 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) 5s infinite alternate both;
     animation: text-blur-out 4s cubic-bezier(0.550, 0.085, 0.680, 0.530) 5s infinite alternate both; */
-    -webkit-animation: text-shadow-drop-center 3s infinite alternate-reverse both;
-    animation: text-shadow-drop-center 3s infinite alternate-reverse both;
+    -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+    animation: text-shadow-drop-center 4s infinite alternate-reverse both;
     margin: 8px; 
 }
 
@@ -174,7 +174,7 @@ body {
     }
     100% {
       text-shadow: 5px 5px 5px rgb(18, 211, 18),
-      4px 2px 15px rgb(65, 28, 4), 4px 0 15px rgb(65, 28, 4);
+      2px 2px 10px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4);
     }
   }
   @keyframes text-shadow-drop-center {
@@ -183,7 +183,8 @@ body {
       4px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4);
     }
     100% {
-      text-shadow: 5px 5px 5px rgb(18, 211, 18),
-      4px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4);    
+      text-shadow: 
+      1px 2px 13px rgb(65, 28, 4), 
+      5px 5px 5px rgb(18, 211, 18);    
     }
   }
