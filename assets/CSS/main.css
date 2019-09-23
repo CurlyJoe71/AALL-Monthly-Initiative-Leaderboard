@@ -92,7 +92,7 @@ body {
 }
 
 .lowName {
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     font-family: 'Fredoka One', cursive;
     text-align: center;
@@ -191,12 +191,12 @@ body {
 
   @media screen and (min-width) {
     .lowName {
-      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(20px + 6 * ((100vw - 320px) / 680));
     }
   }
 
   @media screen and (min-width: 1000px) {
     .lowName {
-      font-size: 20px;
+      font-size: 23px;
     }
   }
