@@ -195,7 +195,7 @@ body {
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 900px) {
     .lowName {
       font-size: 23px;
     }
