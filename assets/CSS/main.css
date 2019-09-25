@@ -173,8 +173,8 @@ body {
       4px 2px 15px rgb(65, 28, 4), 4px 0 15px rgb(65, 28, 4);
     }
     100% {
-      text-shadow: 5px 5px 5px rgb(18, 211, 18),
-      2px 2px 10px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4);
+      text-shadow: 2px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4), 
+      5px 5px 5px rgb(18, 211, 18);
     }
   }
   @keyframes text-shadow-drop-center {
@@ -183,9 +183,8 @@ body {
       4px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4);
     }
     100% {
-      text-shadow: 
-      0px 2px 13px rgb(65, 28, 4), 
-      5px 5px 5px rgb(18, 211, 18);    
+      text-shadow: 2px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4), 
+      5px 5px 5px rgb(18, 211, 18);
     }
   }
 
