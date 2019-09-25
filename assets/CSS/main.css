@@ -167,16 +167,22 @@ body {
  * @animation text-shadow-drop-center
  * ----------------------------------------
  */
- /* @-webkit-keyframes text-shadow-drop-center {
+ @-webkit-keyframes text-shadow-drop-center {
     0% {
-      text-shadow: 0 0 0 rgba(0, 0, 0, 0),
-      4px 2px 15px rgb(65, 28, 4), 4px 0 15px rgb(65, 28, 4);
+      text-shadow:    
+      0 0 0 rgba(0, 0, 0, 0),
+      4px 2px 15px rgb(65, 28, 4), 
+      4px 0px 15px rgb(65, 28, 4),
+      5px 4px 15px rgb(65, 28, 4);
     }
     100% {
-      text-shadow: 2px 2px 15px rgb(65, 28, 4), 4px 0px 15px rgb(65, 28, 4), 
-      5px 5px 5px rgb(18, 211, 18);
+      text-shadow: 
+      2px 2px 15px rgb(65, 28, 4), 
+      4px 4px 15px rgb(65, 28, 4), 
+      5px 5px 15px rgb(65, 28, 4),
+      6px 6px 10px rgb(218, 69, 10);
     }
-  } */
+  }
   @keyframes text-shadow-drop-center {
     0% {
       text-shadow: 
