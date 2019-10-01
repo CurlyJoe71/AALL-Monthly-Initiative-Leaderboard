@@ -22,9 +22,9 @@ body {
     display: flex;
     flex-direction: column;
     /* background: #43812b; */
-    flex-wrap: wrap;
-    height: 75vh;
-    background-image: url("http://curlyjoe71.github.io/AALL-Monthly-Initiative-Leaderboard/assets/images/Survivor_AALL_Clipped.png");
+    /* flex-wrap: wrap;
+    height: 75vh; */
+    /* background-image: url("http://curlyjoe71.github.io/AALL-Monthly-Initiative-Leaderboard/assets/images/Survivor_AALL_Clipped.png"); */
     background-position: center;
     background-repeat: no-repeat;
 }
