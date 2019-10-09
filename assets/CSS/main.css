@@ -92,7 +92,7 @@ body {
 }
 
 .lowName {
-    font-size: 25px;
+    font-size: 22px;
     color: white;
     font-family: 'Fredoka One', cursive;
     text-align: center;
@@ -101,6 +101,100 @@ body {
     -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
     animation: text-shadow-drop-center 4s infinite alternate-reverse both;
     margin: 8px; 
+}
+
+hr {
+  width: 80%;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(16, 39, 104);
+  border: 0 none;
+  margin-top: 10px;
+  margin-bottom:10px;
+  }
+
+#winners {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 21px;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+  animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+  /* height: 700px; */
+}
+
+#winner1 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 340px;
+  width: 271px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-image: url("../../assets/images/Winner1.JPG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+  border: thick double #7dce32;
+  -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+  animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+}
+
+#winner2 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 247px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-image: url("../../assets/images/Winner2.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+  border: thick double #7dce32;
+}
+
+#winner3 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 227px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-image: url("../../assets/images/Winner3.JPG");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+  border: thick double #7dce32;
+}
+
+#winner4 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 152px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-image: url("../../assets/images/WinnerHonorable.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5%;
+  border: thick double #7dce32;
+}
+
+.sub {
+  font-size: 15px;
 }
 
 @-webkit-keyframes glow {
