@@ -15,57 +15,55 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 let csrNames = db.collection("Survivors");
 let mainObject = [];
-// const namesArray = [
-//     "Jaime Gonzalez",
-//     "James Gonzo",
-//     "Jamie WrongName",
-//     "James Michael",
-//     "Jimmy GG",
-//     "Not As Good As Jimmy",
-//     "Jim Mickey",
-//     "Jim-Jim Jur-EE",
-//     "Jaime Bo Baime",
-//     "More Testing",
-//     "Even More Names",
-//     "Getting to the Bottom",
-//     "Who are You?",
-//     "I Have No Idea!",
-//     "Where are we going?",
-//     "Probably to the Moon and Back",
-//     "Oh you're so sweet",
-//     "I know, right?",
-//     "Boom Chikaboom"
-// ]
 
-/* 
-mainObject should look like:
-{Name: "Jaime Gonzalez",
-Tribe: "CORP"},
-{Name: "Jimmy Gonzo",
-Tribe: "ACHG"}
-*/
+//getting date of last Friday, formatting to match the string in Firebase records
+const t = new Date().getDate() + (6 - new Date().getDay() -1) -7;
+console.log("t: ", t);
+const lastFridayObject = new Date();
+lastFridayObject.setDate(t);
+let lastWeek = lastFridayObject.getFullYear() + "" + (lastFridayObject.getMonth() + 1) + "" + (lastFridayObject.getDate());
+if (new Date().getDay() == 5) {
+    let date = new Date();
+    lastWeek = date.getFullYear() + "" + (date.getMonth() + 1) + "" + (date.getDate());
+} 
+
+console.log(lastWeek);
+let tempObject = new Object();
+// let query = csrNames.where('dateCreated', '==', `${lastWeek}`)
+//     .get()
+//     .then(snapshot => {
+//         snapshot.forEach(doc => {
+//             console.log(doc.data().CSR);
+           
+//                 tempObject['Name'] = doc.data().Name;
+//                 tempObject['Tribe'] = doc.data().Tribe;
+//                 tempObject['Streak'] = doc.data().Streak;
+//                 // console.log(tempObject);
+//                 mainObject.push(tempObject);
+//                 // console.log(mainObject);
+//                 addSingleName(tempObject);
+            
+//         }
+//         )
+//     })
 
 function getNames() {
     csrNames.get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             console.log(doc.data().CSR);
-            // piece together a new object with whatever details we'll need displayed.
-            // e.g. Name, Tribe, else?
-
-            // change line below to make the mainObject contain the newly constructed object.
-            // mainObject = Object.keys(doc.data());
-            let tempObject = new Object();
-            tempObject['Name'] = doc.data().Name;
-            tempObject['Tribe'] = doc.data().Tribe;
-            // console.log(tempObject);
-            mainObject.push(tempObject);
-            // console.log(mainObject);
+            if(doc.data().dateCreated == `${lastWeek}`) {
+                tempObject['Name'] = doc.data().Name;
+                tempObject['Tribe'] = doc.data().Tribe;
+                tempObject['Streak'] = doc.data().Streak;
+                // console.log(tempObject);
+                mainObject.push(tempObject);
+                // console.log(mainObject);
+                addSingleName(tempObject);
+            }
         })
-
             // addTopNames();
-
-            addNames();
+            //addNames();
             // topNameAnimation();
     })
     .catch(err => {
@@ -81,10 +79,18 @@ function getNames() {
 //     }
 // } 
 
+function addSingleName(obj) {
+    //console.log(obj);
+    let newLowName = "";
+    newLowName = "<h3 class='lowName'>" + obj["Name"] + " (" + obj["Tribe"] + ") " + obj["Streak"] + " days" + "</h3>";
+    $('#lowNameField').append("<div class='row'></div>");
+    $('#lowNameField').append(newLowName);
+}
+
 function addNames() {
     mainObject.forEach(doc => {
         console.log(doc)
-        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " (" + doc["Tribe"] + ")" + "</h3>";
+        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " (" + doc["Tribe"] + ") " + doc["Streak"] + " days" + "</h3>";
         $('#lowNameField').append("<div class='row'></div>");
         $('#lowNameField').append(newLowName);
     })
