@@ -82,7 +82,8 @@ function getNames() {
 function addSingleName(obj) {
     //console.log(obj);
     let newLowName = "";
-    newLowName = "<h3 class='lowName'>" + obj["Name"] + " (" + obj["Tribe"] + ") " + obj["Streak"] + " days" + "</h3>";
+    newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span>" + "</h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
 }
@@ -90,7 +91,7 @@ function addSingleName(obj) {
 function addNames() {
     mainObject.forEach(doc => {
         console.log(doc)
-        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " (" + doc["Tribe"] + ") " + doc["Streak"] + " days" + "</h3>";
+        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " <span class='tribe'>(" + doc["Tribe"] + ")</span> " + doc["Streak"] + " days" + "</h3>";
         $('#lowNameField').append("<div class='row'></div>");
         $('#lowNameField').append(newLowName);
     })

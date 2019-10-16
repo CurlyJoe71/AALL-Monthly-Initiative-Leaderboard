@@ -103,6 +103,16 @@ body {
     margin: 8px; 
 }
 
+.tribe {
+  font-size: 19px;
+  color: rgb(136, 223, 22);
+}
+
+.tribe-win {
+  font-size: 22px;
+  color: rgb(136, 223, 22);
+}
+
 hr {
   width: 80%;
   height: 2px;
@@ -125,6 +135,20 @@ hr {
   -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
   animation: text-shadow-drop-center 4s infinite alternate-reverse both;
   /* height: 700px; */
+}
+#winners h1 {
+  font-size: 27px;
+  padding: 10px;
+}
+
+#winners h3 {
+  font-size: 23px;
+  padding: 10px;
+}
+
+#winners h4 {
+  font-size: 20px;
+  padding: 8px;
 }
 
 #winner1 {
