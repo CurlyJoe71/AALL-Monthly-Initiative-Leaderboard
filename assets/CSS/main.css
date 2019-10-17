@@ -136,17 +136,30 @@ hr {
   animation: text-shadow-drop-center 4s infinite alternate-reverse both;
   /* height: 700px; */
 }
-#winners h1 {
+
+.winners {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 21px;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  -webkit-animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+  animation: text-shadow-drop-center 4s infinite alternate-reverse both;
+}
+
+.winners h1 {
   font-size: 27px;
   padding: 10px;
 }
 
-#winners h3 {
+.winners h3 {
   font-size: 23px;
   padding: 10px;
 }
 
-#winners h4 {
+.winners h4 {
   font-size: 20px;
   padding: 8px;
 }
