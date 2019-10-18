@@ -82,10 +82,17 @@ function getNames() {
 function addSingleName(obj) {
     //console.log(obj);
     let newLowName = "";
+    let emoji7 = "<i class='em em---1' aria-role='presentation' aria-label='thumbs up'></i>"
+    let emoji14 = "<i class='em em-hugging_face' aria-role='presentation' aria-label='hugging face'></i>";
+    if (obj["Streak"] == 7) {
+        emoji14 = "";
+    }
+
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span>" + "</h3>";
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + "</h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
+    // $('#lowNameField').append(emoji);
 }
 
 function addNames() {
