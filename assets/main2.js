@@ -84,7 +84,7 @@ function addSingleName(obj) {
     let newLowName = "";
     let emoji7 = "<i class='em em---1' aria-role='presentation' aria-label='thumbs up'></i>"
     let emoji14 = "<i class='em em-hugging_face' aria-role='presentation' aria-label='hugging face'></i>";
-    let emoji21 = "<i class='em em-green_heart' aria-role='presentation' aria-label='green heart'></i>";
+    let emoji21 = "<i class='em em-muscle' aria-role='presentation' aria-label='muscle'></i>";
     if (obj["Streak"] == 7) {
         emoji14 = "";
         emoji21 = "";
