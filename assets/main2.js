@@ -85,16 +85,22 @@ function addSingleName(obj) {
     let emoji7 = "<i class='em em---1' aria-role='presentation' aria-label='thumbs up'></i>"
     let emoji14 = "<i class='em em-hugging_face' aria-role='presentation' aria-label='hugging face'></i>";
     let emoji21 = "<i class='em em-muscle' aria-role='presentation' aria-label='muscle'></i>";
+    let emoji28 = "<i class='em em-kissing_cat' aria-role='presentation' aria-label='kissing cat'></i>";
     if (obj["Streak"] == 7) {
         emoji14 = "";
         emoji21 = "";
+        emoji28 = "";
     }
     else if (obj["Streak"] ==14) {
         emoji21 = "";
+        emoji28 = "";
+    }
+    else if (obj["Streak"] == 21) {
+        emoji28 = "";
     }
 
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + "</h3>";
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + emoji28 + "</h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
     // $('#lowNameField').append(emoji);
