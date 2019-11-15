@@ -87,24 +87,32 @@ function addSingleName(obj) {
     let emoji21 = "<i class='em em-muscle' aria-role='presentation' aria-label='muscle'></i>";
     let emoji28 = "<i class='em em-kissing_cat' aria-role='presentation' aria-label='kissing cat'></i>";
     let emoji35 = "<i class='em em-fire' aria-role='presentation' aria-label='fire'></i>";
+    let emoji42 = "<i class='em em-heart_eyes' aria-role='presentation' aria-label='heart eyes'></i>";    
 
     if (obj["Streak"] == 7) {
         emoji14 = "";
         emoji21 = "";
         emoji28 = "";
         emoji35 = "";
+        emoji42 = "";
     }
     else if (obj["Streak"] ==14) {
         emoji21 = "";
         emoji28 = "";
         emoji35 = "";
+        emoji42 = "";
     }
     else if (obj["Streak"] == 21) {
         emoji28 = "";
         emoji35 = "";
+        emoji42 = "";
     }
     else if (obj["Streak"] == 28) {
         emoji35 = "";
+        emoji42 = "";
+    }
+    else if (obj["Streak"] == 35) {
+        emoji42 = "";
     }
 
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
