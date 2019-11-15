@@ -116,7 +116,7 @@ function addSingleName(obj) {
     }
 
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + " " + emoji28 + " " + emoji35 + "</h3>";
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + " " + emoji28 + " " + emoji35 + " " + emoji42 + "</h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
     // $('#lowNameField').append(emoji);
