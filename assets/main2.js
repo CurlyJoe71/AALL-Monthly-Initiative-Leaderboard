@@ -82,12 +82,13 @@ function getNames() {
 function addSingleName(obj) {
     //console.log(obj);
     let newLowName = "";
-    let emoji7 = "<i class='em em---1' aria-role='presentation' aria-label='thumbs up'></i>"
-    let emoji14 = "<i class='em em-hugging_face' aria-role='presentation' aria-label='hugging face'></i>";
-    let emoji21 = "<i class='em em-muscle' aria-role='presentation' aria-label='muscle'></i>";
-    let emoji28 = "<i class='em em-kissing_cat' aria-role='presentation' aria-label='kissing cat'></i>";
-    let emoji35 = "<i class='em em-fire' aria-role='presentation' aria-label='fire'></i>";
-    let emoji42 = "<i class='em em-heart_eyes' aria-role='presentation' aria-label='heart eyes'></i>";    
+    // let emoji7 = "<i class='em em---1' aria-role='presentation' aria-label='thumbs up'></i>"
+    let emoji7 = "<span aria-role='image' aria-label='thumbs up'>👍</span>"
+    let emoji14 = "<span aria-role='image' aria-label='blowing kiss face'>😘</span>";
+    let emoji21 = "<span aria-role='image' aria-label='muscle'>💪</span>";
+    let emoji28 = "<span aria-role='image' aria-label='bullseye'>🎯</span>";
+    let emoji35 = "<span aria-role='image' aria-label='fire'>🔥</span>";
+    let emoji42 = "<span aria-role='image' aria-label='riasing hands'>🙌</span>";    
 
     if (obj["Streak"] == 7) {
         emoji14 = "";
