@@ -90,6 +90,7 @@ function addSingleName(obj) {
     let emoji35 = "<span aria-role='image' aria-label='fire'>🔥</span>";
     let emoji42 = "<span aria-role='image' aria-label='riasing hands'>🙌</span>";   
     let emoji49 = "<span aria-role='image' aria-label='star'>🌟</span>" 
+    let emoji56 = "<span aria-role='image' aria-label='star'>😍</span>" 
 
     if (obj["Streak"] == 7) {
         emoji14 = "";
@@ -98,6 +99,7 @@ function addSingleName(obj) {
         emoji35 = "";
         emoji42 = "";
         emoji49 = "";
+        emoji56 = "";
     }
     else if (obj["Streak"] ==14) {
         emoji21 = "";
@@ -105,28 +107,36 @@ function addSingleName(obj) {
         emoji35 = "";
         emoji42 = "";
         emoji49 = "";
+        emoji56 = "";
     }
     else if (obj["Streak"] == 21) {
         emoji28 = "";
         emoji35 = "";
         emoji42 = "";
         emoji49 = "";
+        emoji56 = "";
     }
     else if (obj["Streak"] == 28) {
         emoji35 = "";
         emoji42 = "";
         emoji49 = "";
+        emoji56 = "";
     }
     else if (obj["Streak"] == 35) {
         emoji42 = "";
         emoji49 = "";
+        emoji56 = "";
     }
     else if (obj["Streak"] == 42) {
         emoji49 = "";
+        emoji56 = "";
+    }
+    else if (obj["Streak"] == 49) {
+        emoji56 = "";
     }
 
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + " " + emoji28 + " " + emoji35 + " " + emoji42 + " " + emoji49 + "</h3>";
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + " " + emoji28 + " " + emoji35 + " " + emoji42 + " " + emoji49 + " " + emoji56 + "</h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
     // $('#lowNameField').append(emoji);
