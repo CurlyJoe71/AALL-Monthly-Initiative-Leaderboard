@@ -106,7 +106,7 @@ function addSingleEndoName(obj) {
     let newEndoName = "";
     let emoji7 = "<span aria-role='image' aria-label='thumbs up'>👍</span>";
     newEndoName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-    obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + "</h3>";
+    obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span></h3>";
     $('#endNameField').append("<div class='row'></div>");
     $('#endNameField').append(newEndoName);
 
@@ -180,7 +180,7 @@ function addSingleName(obj) {
     }
 
     newLowName = "<h3 class='lowName'>" + obj["Name"] + " <span class='tribe'>(" + 
-        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span> " + emoji7 + " " + emoji14 + " " + emoji21 + " " + emoji28 + " " + emoji35 + " " + emoji42 + " " + emoji49 + " " + emoji56 + emoji63 + "</h3>";
+        obj["Tribe"] + ")</span> <span class='streak'>" + obj["Streak"] + " days<span></h3>";
     $('#lowNameField').append("<div class='row'></div>");
     $('#lowNameField').append(newLowName);
     // $('#lowNameField').append(emoji);
