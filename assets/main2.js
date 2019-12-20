@@ -32,23 +32,6 @@ if (new Date().getDay() == 5) {
 console.log(lastWeek);
 let tempObject = new Object();
 let tempEndoObject = new Object();
-// let query = csrNames.where('dateCreated', '==', `${lastWeek}`)
-//     .get()
-//     .then(snapshot => {
-//         snapshot.forEach(doc => {
-//             console.log(doc.data().CSR);
-           
-//                 tempObject['Name'] = doc.data().Name;
-//                 tempObject['Tribe'] = doc.data().Tribe;
-//                 tempObject['Streak'] = doc.data().Streak;
-//                 // console.log(tempObject);
-//                 mainObject.push(tempObject);
-//                 // console.log(mainObject);
-//                 addSingleName(tempObject);
-            
-//         }
-//         )
-//     })
 
 function getNames() {
     csrNames.get()
@@ -186,14 +169,14 @@ function addSingleName(obj) {
     // $('#lowNameField').append(emoji);
 }
 
-function addNames() {
-    mainObject.forEach(doc => {
-        console.log(doc)
-        const newLowName = "<h3 class='lowName'>" + doc["Name"] + " <span class='tribe'>(" + doc["Tribe"] + ")</span> " + doc["Streak"] + " days" + "</h3>";
-        $('#lowNameField').append("<div class='row'></div>");
-        $('#lowNameField').append(newLowName);
-    })
-}
+// function addNames() {
+//     mainObject.forEach(doc => {
+//         console.log(doc)
+//         const newLowName = "<h3 class='lowName'>" + doc["Name"] + " <span class='tribe'>(" + doc["Tribe"] + ")</span> " + doc["Streak"] + " days" + "</h3>";
+//         $('#lowNameField').append("<div class='row'></div>");
+//         $('#lowNameField').append(newLowName);
+//     })
+// }
 
 function topNameAnimation() {
     $('.topName').addClass('topNameAnimation');   
