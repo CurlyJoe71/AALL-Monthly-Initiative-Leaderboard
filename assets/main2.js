@@ -34,10 +34,10 @@ let tempObject = new Object();
 let tempEndoObject = new Object();
 
 function getNames() {
-    csrNames.get()
+    csrNames.orderBy('Streak', 'desc').get()
     .then(snapshot => {
         snapshot.forEach(doc => {
-            // console.log(doc.data().CSR);
+            // console.log(doc.data().Streak);
             if(doc.data().dateCreated == `${lastWeek}`) {
                 tempObject['Name'] = doc.data().Name;
                 tempObject['Tribe'] = doc.data().Tribe;
@@ -58,11 +58,11 @@ function getNames() {
 }
 
 function getEndoNames() {
-    endoNames.get()
+    endoNames.orderBy('Streak', 'desc').get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             //${lastWeek}
-            console.log('end doc.data', doc.data().dateCreated);
+            // console.log('end doc.data', doc.data().dateCreated);
             if(doc.data().dateCreated == `20191218`) {
                 tempEndoObject['Name'] = doc.data().Name;
                 tempEndoObject['Tribe'] = doc.data().Tribe;
