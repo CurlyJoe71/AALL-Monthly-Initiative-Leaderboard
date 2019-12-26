@@ -63,7 +63,7 @@ function getEndoNames() {
         snapshot.forEach(doc => {
             //${lastWeek}
             // console.log('end doc.data', doc.data().dateCreated);
-            if(doc.data().dateCreated == `20191218`) {
+            if(doc.data().dateCreated == `20191226`) {
                 tempEndoObject['Name'] = doc.data().Name;
                 tempEndoObject['Tribe'] = doc.data().Tribe;
                 tempEndoObject['Streak'] = doc.data().Streak;
