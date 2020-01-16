@@ -38,7 +38,7 @@ addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
     "<tr>" + 
-                    "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["Tribe"] + ")</span>" + "</td>" + 
+                    "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
                     "<td>" + obj["appSet"] + "%" + "</td>" +
                     "<td>" + obj["conversion"] + "%" + "</td>" 
                     +  "</tr>";
@@ -48,11 +48,11 @@ addTaxesRow = obj => {
 }
 
 getTaxes = () => {
-    taxesNames.get()
+    taxesNames.orderBy('appSet', 'desc').get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             tempObject['Name'] = doc.data().Name;
-            tempObject['Tribe'] = doc.data().Tribe;
+            tempObject['office'] = doc.data().office;
             tempObject['appSet'] = doc.data().appSet;
             tempObject['conversion'] = doc.data().conversion;
             addTaxesRow(tempObject);
