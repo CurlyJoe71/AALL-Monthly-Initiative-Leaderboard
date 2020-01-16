@@ -38,7 +38,7 @@ addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
     "<tr>" + 
-                    "<td>" + obj["Name"] +"<span class='tribe'>(" + obj["Tribe"] + ")</span>" + "</td>" + 
+                    "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["Tribe"] + ")</span>" + "</td>" + 
                     "<td>" + obj["appSet"] + "%" + "</td>" +
                     "<td>" + obj["conversion"] + "%" + "</td>" 
                     +  "</tr>";

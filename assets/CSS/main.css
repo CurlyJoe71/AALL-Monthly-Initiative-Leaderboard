@@ -20,7 +20,7 @@ body {
 
 .bottom-flex-container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* background: #43812b; */
     /* flex-wrap: wrap;
     height: 75vh; */
@@ -234,14 +234,22 @@ hr {
   font-size: 15px;
 }
 
+table {
+  align-self: center;
+}
+
 #tableContent {
   border-collapse: collapse;
   width: 100%;
+  align-self: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #tableContent td, #tableContent th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 #tableContent tr:nth-child(even) {
@@ -251,9 +259,15 @@ hr {
 #tableContent th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: #4CAF50;
   color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+.names {
+  font-size: 1.3em;
 }
 
 
