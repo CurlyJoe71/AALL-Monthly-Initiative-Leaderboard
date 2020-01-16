@@ -13,52 +13,25 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
-// let csrNames = db.collection("Survivors");
-// let endoNames = db.collection("Endos");
-let taxesNames = db.collection ("Taxes");
+let csrNames = db.collection("Survivors");
+let endoNames = db.collection("Endos");
 let mainObject = [];
 let endoObject = [];
 
 //getting date of last Friday, formatting to match the string in Firebase records
-// const t = new Date().getDate() + (6 - new Date().getDay() -1) -7;
-// console.log("t: ", t);
-// const lastFridayObject = new Date();
-// lastFridayObject.setDate(t);
-// let lastWeek = lastFridayObject.getFullYear() + "" + (lastFridayObject.getMonth() + 1) + "" + (lastFridayObject.getDate());
-// if (new Date().getDay() == 5) {
-//     let date = new Date();
-//     lastWeek = date.getFullYear() + "" + (date.getMonth() + 1) + "" + (date.getDate());
-// } 
+const t = new Date().getDate() + (6 - new Date().getDay() -1) -7;
+console.log("t: ", t);
+const lastFridayObject = new Date();
+lastFridayObject.setDate(t);
+let lastWeek = lastFridayObject.getFullYear() + "" + (lastFridayObject.getMonth() + 1) + "" + (lastFridayObject.getDate());
+if (new Date().getDay() == 5) {
+    let date = new Date();
+    lastWeek = date.getFullYear() + "" + (date.getMonth() + 1) + "" + (date.getDate());
+} 
 
-// console.log(lastWeek);
+console.log(lastWeek);
 let tempObject = new Object();
 let tempEndoObject = new Object();
-
-addTaxesRow = obj => {
-    let newTaxRow = "";
-    newTaxRow = 
-    "<tr>" + 
-                    "<td>" + obj["Name"] +"<span class='tribe'>(" + obj["Tribe"] + ")</span>" + "</td>" + 
-                    "<td>" + obj["appSet"] + "%" + "</td>" +
-                    "<td>" + obj["conversion"] + "%" + "</td>" 
-                    +  "</tr>";
-                console.log('newTaxRow', newTaxRow);
-    $('#taxRow').before(newTaxRow);
-    
-}
-
-getTaxes = () => {
-    taxesNames.get()
-    .then(snapshot => {
-        snapshot.forEach(doc => {
-            tempObject['Name'] = doc.data().Name;
-            tempObject['Tribe'] = doc.data().Tribe;
-            tempObject['appSet'] = doc.data().appSet;
-            tempObject['conversion'] = doc.data().conversion;
-            addTaxesRow(tempObject);
-        })
-    })
-}
 
 function getNames() {
     csrNames.orderBy('Streak', 'desc').get()
@@ -210,7 +183,6 @@ function topNameAnimation() {
 }
 
 $(document).ready(function () {
-    // getNames();
-    // getEndoNames();
-    getTaxes();
+    getNames();
+    getEndoNames();
 })

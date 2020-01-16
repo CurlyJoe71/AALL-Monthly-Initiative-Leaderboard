@@ -234,6 +234,29 @@ hr {
   font-size: 15px;
 }
 
+#tableContent {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tableContent td, #tableContent th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableContent tr:nth-child(even) {
+  background-color: #f2f2f23f;
+}
+
+#tableContent th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
 @-webkit-keyframes glow {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #43812b, 
