@@ -37,11 +37,13 @@ let tempEndoObject = new Object();
 addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
-    "<tr>" + 
-                    "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
-                    "<td>" + obj["appSet"] + "%" + "</td>" +
-                    "<td>" + obj["conversion"] + "%" + "</td>" 
-                    +  "</tr>";
+        "<tr>" + 
+            "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
+            "<td>" + obj["appSet"] + "%" + "</td>" +
+            "<td>" + obj["conversion"] + "%" + "</td>" +  
+            "<td>" + obj["manager"] + "</td>" +
+            "<td>" + obj["teamApp"] + "%" + "</td>" +
+        "</tr>";
                 console.log('newTaxRow', newTaxRow);
     $('#taxRow').before(newTaxRow);
     
@@ -55,6 +57,8 @@ getTaxes = () => {
             tempObject['office'] = doc.data().office;
             tempObject['appSet'] = doc.data().appSet;
             tempObject['conversion'] = doc.data().conversion;
+            tempObject['manager'] = doc.data().manager;
+            tempObject['teamApp'] = doc.data().teamApp;
             addTaxesRow(tempObject);
         })
     })
