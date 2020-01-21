@@ -64,6 +64,18 @@ getTaxes = () => {
     })
 }
 
+getOfficeLeader = () => {
+    let officeLeader = `<h4>The office currently in the lead is: `;
+    taxesNames.orderBy('officePercentage', 'desc').limit(1).get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            console.log('getOfficeLader top ranking office: ', doc.data().office, doc.data().officePercentage);
+            officeLeader += `<span class=''>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4>`
+            $('#officeLeader').append(officeLeader);
+        })
+    })
+}
+
 function getNames() {
     csrNames.orderBy('Streak', 'desc').get()
     .then(snapshot => {
@@ -217,4 +229,5 @@ $(document).ready(function () {
     // getNames();
     // getEndoNames();
     getTaxes();
+    getOfficeLeader();
 })

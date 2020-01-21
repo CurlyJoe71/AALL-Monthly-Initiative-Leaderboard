@@ -256,11 +256,21 @@ table {
   background-color: #f2f2f23f;
 }
 
-#tableContent th {
+#tableContent th  {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
   background-color: #4CAF50;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+#officeLeader {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  /* background-color: #4CAF50; */
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.1em;
