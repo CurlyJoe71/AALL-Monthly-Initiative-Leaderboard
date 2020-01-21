@@ -65,13 +65,25 @@ getTaxes = () => {
 }
 
 getOfficeLeader = () => {
+    let leadingNumber;
+    let leadingOffice;
     let officeLeader = `<h4>The office currently in the lead is: `;
     taxesNames.orderBy('officePercentage', 'desc').limit(1).get()
     .then(snapshot => {
         snapshot.forEach(doc => {
+            leadingNumber = doc.data().officePercentage;
+            leadingOffice = doc.data().office;
             console.log('getOfficeLader top ranking office: ', doc.data().office, doc.data().officePercentage);
             officeLeader += `<span class=''>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4>`
             $('#officeLeader').append(officeLeader);
+        })
+    })
+    .then(()=>{
+        taxesNames.orderBy('office', 'asc').where('officePercentage', '==', leadingNumber).where('office', '>', leadingOffice).limit(1).get()
+        .then(snapshot2 => {
+            snapshot2.forEach(doc => {
+                console.log('snapshot2 doc.data: ', doc.data());
+            })
         })
     })
 }
