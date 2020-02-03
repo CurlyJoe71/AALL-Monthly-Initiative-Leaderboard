@@ -34,6 +34,8 @@ let endoObject = [];
 let tempObject = new Object();
 let tempEndoObject = new Object();
 
+$(document).tooltip();
+
 addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
@@ -77,7 +79,7 @@ getOfficeLeader = () => {
             leadingNumber = doc.data().officePercentage;
             leadingOffice = doc.data().office;
             console.log('getOfficeLader top ranking office: ', doc.data().office, doc.data().officePercentage);
-            officeLeader += `<span>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4>`
+            officeLeader += `<div title='${doc.data().officeApptSet} appts set out of ${doc.data().officeTotalOpp} opportunities'><span>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4></div>`
             $('#officeLeader').append(officeLeader);
         })
     })
@@ -236,9 +238,9 @@ function addSingleName(obj) {
 //     })
 // }
 
-function topNameAnimation() {
-    $('.topName').addClass('topNameAnimation');   
-}
+// function topNameAnimation() {
+//     $('.topName').addClass('topNameAnimation');   
+// }
 
 $(document).ready(function () {
     // getNames();

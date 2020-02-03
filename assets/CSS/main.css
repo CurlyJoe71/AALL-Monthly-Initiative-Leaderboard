@@ -302,6 +302,12 @@ tbody {
   font-size: 1.2em;
 }
 
+/* label {
+  display: inline-block;
+  width: 5em;
+  background: rgba(19,3,84,1);
+} */
+
 
 @-webkit-keyframes glow {
     from {
