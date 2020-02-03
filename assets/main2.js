@@ -40,7 +40,8 @@ addTaxesRow = obj => {
         "<tr>" + 
             "<td class='names'>" + obj["Name"] +"<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
             "<td>" + obj["appSet"] + "%" + "</td>" +
-            "<td>" + obj["conversion"] + "%" + "</td>" +  
+            "<td>" + obj["conversion"] + "%" + "</td>" + 
+            "<td>" + obj["Bonus"] + "</td>" + 
             "<td>" + obj["manager"] + "</td>" +
             "<td>" + obj["teamApp"] + "%" + "</td>" +
         "</tr>";
@@ -57,6 +58,7 @@ getTaxes = () => {
             tempObject['office'] = doc.data().office;
             tempObject['appSet'] = doc.data().appSet;
             tempObject['conversion'] = doc.data().conversion;
+            tempObject['Bonus'] = doc.data().Bonus;
             tempObject['manager'] = doc.data().manager;
             tempObject['teamApp'] = doc.data().teamApp;
             addTaxesRow(tempObject);
