@@ -34,7 +34,20 @@ let endoObject = [];
 let tempObject = new Object();
 let tempEndoObject = new Object();
 
-$(document).tooltip();
+$("<tr>").tooltip({
+    position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: (position, feedback) => {
+            $(this).css(position);
+            $("<div>")
+                .addClass("arrow")
+                .addClass(feedback.vertical)
+                .addClass(feedback.horizontal)
+                .appendTo(this);
+        }
+    }
+});
 
 addTaxesRow = obj => {
     let newTaxRow = "";
@@ -46,7 +59,7 @@ addTaxesRow = obj => {
             "<td>" + obj["Bonus"] + "</td>" + 
             // "<td>" + obj["manager"] + "</td>" +
             "<td>" + obj["officePercentage"] + "%" + "</td>" +
-        "</tr><div class='arrow'></div>";
+        "</tr>";
                 console.log('newTaxRow', newTaxRow);
     $('#taxRow').before(newTaxRow);
     
