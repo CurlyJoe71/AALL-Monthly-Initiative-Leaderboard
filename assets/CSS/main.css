@@ -246,10 +246,25 @@ table {
   margin-right: 20px;
 }
 
+tbody {
+  background: rgb(19,3, 84);
+
+  background: linear-gradient(320deg, 
+    rgba(19,3,84,1) 0%, 
+    /* rgba(203, 35, 209, 0.32) 10%, */
+    rgba(241, 8, 8, 1) 30%,  
+    rgb(13, 153, 163) 80%, 
+    rgba(9, 88, 6, 1) 90%, 
+    rgba(36, 224, 30, 1) 100%);
+
+}
+
 #tableContent td, #tableContent th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
+  border-right-style: none;
+  border-left-style: none;
 }
 
 #tableContent tr:nth-child(even) {
@@ -260,8 +275,8 @@ table {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #4CAF50;
-  color: white;
+  background-color: rgb(149, 182, 154);
+  color: rgb(221, 87, 34);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.1em;
 }
@@ -270,10 +285,17 @@ table {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  /* background-color: #4CAF50; */
-  color: white;
+  background: rgb(221, 87, 34);
+  background: linear-gradient(283deg, rgba(186,7,7,1) 0%, rgba(221,87,34,1) 62%, rgba(241,164,116,1) 100%);
+  color: rgb(255,255,255);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
   font-size: 1em;
+  width: 500px;
+  margin: auto auto 50px auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(19,3,84,1);
+  text-shadow: 0 0 0 rgb(255, 255, 255);
 }
 
 .names {

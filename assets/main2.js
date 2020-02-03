@@ -42,8 +42,8 @@ addTaxesRow = obj => {
             "<td>" + obj["appSet"] + "%" + "</td>" +
             "<td>" + obj["conversion"] + "%" + "</td>" + 
             "<td>" + obj["Bonus"] + "</td>" + 
-            "<td>" + obj["manager"] + "</td>" +
-            "<td>" + obj["teamApp"] + "%" + "</td>" +
+            // "<td>" + obj["manager"] + "</td>" +
+            "<td>" + obj["officePercentage"] + "%" + "</td>" +
         "</tr>";
                 console.log('newTaxRow', newTaxRow);
     $('#taxRow').before(newTaxRow);
@@ -59,8 +59,9 @@ getTaxes = () => {
             tempObject['appSet'] = doc.data().appSet;
             tempObject['conversion'] = doc.data().conversion;
             tempObject['Bonus'] = doc.data().Bonus;
-            tempObject['manager'] = doc.data().manager;
-            tempObject['teamApp'] = doc.data().teamApp;
+            // tempObject['manager'] = doc.data().manager;
+            // tempObject['teamApp'] = doc.data().teamApp;
+            tempObject['officePercentage'] = doc.data().officePercentage;
             addTaxesRow(tempObject);
         })
     })
@@ -76,7 +77,7 @@ getOfficeLeader = () => {
             leadingNumber = doc.data().officePercentage;
             leadingOffice = doc.data().office;
             console.log('getOfficeLader top ranking office: ', doc.data().office, doc.data().officePercentage);
-            officeLeader += `<span class=''>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4>`
+            officeLeader += `<span>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4>`
             $('#officeLeader').append(officeLeader);
         })
     })
