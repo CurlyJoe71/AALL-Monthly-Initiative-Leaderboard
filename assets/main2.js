@@ -39,14 +39,14 @@ $(document).tooltip();
 addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
-        "<tr>" + 
+        "<tr title='" + obj["AppointmentsSet"] + " appointments set out of " + obj["TotalOpps"] + " opportunities'" + ">" + 
             "<td class='names'>" + obj["Name"] + "<br/>" + "<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
             "<td>" + obj["appSet"] + "%" + "</td>" +
             "<td>" + obj["conversion"] + "%" + "</td>" + 
             "<td>" + obj["Bonus"] + "</td>" + 
             // "<td>" + obj["manager"] + "</td>" +
             "<td>" + obj["officePercentage"] + "%" + "</td>" +
-        "</tr>";
+        "</tr><div class='arrow'></div>";
                 console.log('newTaxRow', newTaxRow);
     $('#taxRow').before(newTaxRow);
     
@@ -58,6 +58,8 @@ getTaxes = () => {
         snapshot.forEach(doc => {
             tempObject['Name'] = doc.data().Name;
             tempObject['office'] = doc.data().office;
+            tempObject['AppointmentsSet'] = doc.data().AppointmentsSet;
+            tempObject['TotalOpps'] = doc.data().TotalOpportunities;
             tempObject['appSet'] = doc.data().appSet;
             tempObject['conversion'] = doc.data().conversion;
             tempObject['Bonus'] = doc.data().Bonus;

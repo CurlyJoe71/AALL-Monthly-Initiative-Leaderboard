@@ -302,12 +302,30 @@ tbody {
   font-size: 1.2em;
 }
 
-/* label {
-  display: inline-block;
-  width: 5em;
-  background: rgba(19,3,84,1);
-} */
+.arrow::after {
+  content: "";
+  background:black;
+  border: 2px solid white;
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+  top: auto;
+  width: 25px;
+  height: 25px;
+  box-shadow: 6px 5px 9px -9px black;
+}
 
+.arrow {
+  width: 70px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+  top: -16px;
+  bottom: auto;
+}
 
 @-webkit-keyframes glow {
     from {
