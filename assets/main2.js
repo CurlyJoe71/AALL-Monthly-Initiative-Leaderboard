@@ -56,7 +56,7 @@ addTaxesRow = obj => {
             "<td class='names'>" + obj["Name"] + "<br/>" + "<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
             "<td title='" + obj["AppointmentsSet"] + " appointments set out of " + obj["TotalOpps"] + " opportunities'" + ">" + obj["appSet"] + "%" + "</td>" +
             "<td title='" + obj["TaxesFiled"] + " customers filed out of" + obj["AppointmentsSet"] + " appointments scheduled'" + ">" + obj["conversion"] + "%" + "</td>" + 
-            "<td>" + obj["Bonus"] + "</td>" + 
+            "<td>$" + obj["Bonus"] + "</td>" + 
             // "<td>" + obj["manager"] + "</td>" +
             "<td>" + obj["officePercentage"] + "%" + "</td>" +
         "</tr>";
