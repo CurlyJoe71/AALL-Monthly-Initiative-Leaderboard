@@ -88,7 +88,7 @@ getTaxes = () => {
 getOfficeLeader = () => {
     let leadingNumber;
     let leadingOffice;
-    let officeLeader = `<h4>The office in the lead: </h4>`;
+    let officeLeader = `<h4>The office with the best Conversion Rate:</h4>`;
     taxesNames.orderBy('ConversionOffice', 'desc').limit(1).get()
     .then(snapshot => {
         snapshot.forEach(doc => {
@@ -105,6 +105,17 @@ getOfficeLeader = () => {
             snapshot2.forEach(doc => {
                 console.log('snapshot2 doc.data: ', doc.data());
             })
+        })
+    })
+}
+
+getOfficeLeader2 = () => {
+    let officeLeader = `<h4>The office with the most Appointments Set:</h4>`;
+    taxesNames.orderBy('officePercentage', 'desc').limit(1).get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            officeLeader += `<div title='${doc.data().officeApptSet} appointments made out of ${doc.data().officeTotalOpp} total opportunities'><span>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4></div>`
+            $('#officeLeader2').append(officeLeader);
         })
     })
 }
@@ -263,4 +274,5 @@ $(document).ready(function () {
     // getEndoNames();
     getTaxes();
     getOfficeLeader();
+    getOfficeLeader2();
 })

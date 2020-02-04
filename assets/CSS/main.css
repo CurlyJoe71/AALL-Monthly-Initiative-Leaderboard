@@ -281,7 +281,7 @@ tbody {
   font-size: 1.1em;
 }
 
-#officeLeader {
+#officeLeader, #officeLeader2 {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -345,6 +345,18 @@ tbody {
 .arrow.top:after {
   bottom: -20px;
   top: auto;
+}
+
+.row:after {
+  content: "";
+  display: flex;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
 }
 
 @-webkit-keyframes glow {
