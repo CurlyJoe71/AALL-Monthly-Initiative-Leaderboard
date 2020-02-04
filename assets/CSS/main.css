@@ -290,8 +290,8 @@ tbody {
   color: rgb(255,255,255);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bolder;
-  font-size: 1em;
-  width: 500px;
+  font-size: 0.7em;
+  width: 300px;
   margin: auto auto 50px auto;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 0px rgba(19,3,84,1);
