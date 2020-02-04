@@ -66,7 +66,7 @@ addTaxesRow = obj => {
 }
 
 getTaxes = () => {
-    taxesNames.orderBy('conversion', 'desc').get()
+    taxesNames.orderBy('Bonus', 'desc').get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             tempObject['Name'] = doc.data().Name;
