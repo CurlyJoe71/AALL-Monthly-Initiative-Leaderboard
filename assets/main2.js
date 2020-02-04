@@ -52,10 +52,10 @@ $("<tr>").tooltip({
 addTaxesRow = obj => {
     let newTaxRow = "";
     newTaxRow = 
-        "<tr title='" + obj["AppointmentsSet"] + " appointments set out of " + obj["TotalOpps"] + " opportunities'" + ">" + 
+        "<tr>" + 
             "<td class='names'>" + obj["Name"] + "<br/>" + "<span class='tribe'>(" + obj["office"] + ")</span>" + "</td>" + 
-            "<td>" + obj["appSet"] + "%" + "</td>" +
-            "<td>" + obj["conversion"] + "%" + "</td>" + 
+            "<td title='" + obj["AppointmentsSet"] + " appointments set out of " + obj["TotalOpps"] + " opportunities'" + ">" + obj["appSet"] + "%" + "</td>" +
+            "<td title='" + obj["TaxesFiled"] + " customers filed out of" + obj["AppointmentsSet"] + " appointments scheduled'" + ">" + obj["conversion"] + "%" + "</td>" + 
             "<td>" + obj["Bonus"] + "</td>" + 
             // "<td>" + obj["manager"] + "</td>" +
             "<td>" + obj["officePercentage"] + "%" + "</td>" +
@@ -66,7 +66,7 @@ addTaxesRow = obj => {
 }
 
 getTaxes = () => {
-    taxesNames.orderBy('appSet', 'desc').get()
+    taxesNames.orderBy('conversion', 'desc').get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             tempObject['Name'] = doc.data().Name;
@@ -74,6 +74,7 @@ getTaxes = () => {
             tempObject['AppointmentsSet'] = doc.data().AppointmentsSet;
             tempObject['TotalOpps'] = doc.data().TotalOpportunities;
             tempObject['appSet'] = doc.data().appSet;
+            tempObject['TaxesFiled'] = doc.data().TaxesFiled;
             tempObject['conversion'] = doc.data().conversion;
             tempObject['Bonus'] = doc.data().Bonus;
             // tempObject['manager'] = doc.data().manager;
@@ -88,13 +89,13 @@ getOfficeLeader = () => {
     let leadingNumber;
     let leadingOffice;
     let officeLeader = `<h4>The office in the lead: </h4>`;
-    taxesNames.orderBy('officePercentage', 'desc').limit(1).get()
+    taxesNames.orderBy('ConversionOffice', 'desc').limit(1).get()
     .then(snapshot => {
         snapshot.forEach(doc => {
             leadingNumber = doc.data().officePercentage;
             leadingOffice = doc.data().office;
             console.log('getOfficeLader top ranking office: ', doc.data().office, doc.data().officePercentage);
-            officeLeader += `<div title='${doc.data().officeApptSet} appts set out of ${doc.data().officeTotalOpp} opportunities'><span>${doc.data().office}</span> at ${doc.data().officePercentage}%!</h4></div>`
+            officeLeader += `<div title='${doc.data().TaxesFiledOffice} customers filed out of ${doc.data().officeApptSet} appointments scheduled'><span>${doc.data().office}</span> at ${doc.data().ConversionOffice}%!</h4></div>`
             $('#officeLeader').append(officeLeader);
         })
     })
