@@ -358,6 +358,17 @@ tbody {
   width: 50%;
 }
 
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #43812b, 
+    0 0 40px #43812b, 0 0 50px #43812b, 0 0 60px #43812b, 0 0 70px #43812b;
+  }
+  to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #51b80d, 0 0 30px #51b80d, 
+      0 0 40px #51b80d, 0 0 50px #51b80d, 0 0 60px #51b80d, 0 0 80px #51b80d; 
+  }
+}
+
 @-webkit-keyframes glow {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #43812b, 
